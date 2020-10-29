@@ -30,32 +30,32 @@ a:visited {
 
 <template>
     <div id="band" class="div-relative ">
-        <nav class="navbar  bg-primary fixed-top navbar-transparent " color-on-scroll="400">
-            <div class="container">
-                <div>
-                    <a class="navbar-brand"> {{ $t('version') }}: v2.3.0 Interstellar RC7 </a>
-                    <Button v-if="switchCode" type="default" ghost @click="register = true">
-                        {{ $t('sign') }}</Button
-                    >
-                </div>
-                <div>
-                    <ul>
-                        <li>
-                            <Button type="default" @click="sponsorship = true" ghost>{{
-                                $t('sponsor')
-                            }}</Button>
-                        </li>
-                        <li>
-                            <div style="margin-left: 50%">
-                                <a href="https://github.com/cookieY/Yearning" target="_blank">
-                                    <Icon type="logo-github" size="30" />
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!--        <nav class="navbar  bg-primary fixed-top navbar-transparent " color-on-scroll="400">-->
+<!--            <div class="container">-->
+<!--                <div>-->
+<!--                    <a class="navbar-brand"> {{ $t('version') }}: v2.3.0 Interstellar RC7 </a>-->
+<!--                    <Button v-if="switchCode" type="default" ghost @click="register = true">-->
+<!--                        {{ $t('sign') }}</Button-->
+<!--                    >-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <ul>-->
+<!--                        <li>-->
+<!--                            <Button type="default" @click="sponsorship = true" ghost>{{-->
+<!--                                $t('sponsor')-->
+<!--                            }}</Button>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <div style="margin-left: 50%">-->
+<!--                                <a href="https://github.com/cookieY/Yearning" target="_blank">-->
+<!--                                    <Icon type="logo-github" size="30" />-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
 
         <div class="page-header div-a" filter-color="orange">
             <div class="page-header-image"></div>
@@ -86,22 +86,22 @@ a:visited {
                                     v-model="formInline.password"
                                 />
                             </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <Icon type="md-key" />
-                                </span>
-                                <input
-                                    :placeholder="$t('pin')"
-                                    class="form-control"
-                                    v-model="formInline.code"
-                                    @keyup.enter="signIn"
-                                />
-                                <SIdentify
-                                    @identifyCode="checkCode"
-                                    class="input-group-addon"
-                                    :replace="replace"
-                                ></SIdentify>
-                            </div>
+<!--                            <div class="input-group form-group-no-border input-lg">-->
+<!--                                <span class="input-group-addon">-->
+<!--                                    <Icon type="md-key" />-->
+<!--                                </span>-->
+<!--                                <input-->
+<!--                                    :placeholder="$t('pin')"-->
+<!--                                    class="form-control"-->
+<!--                                    v-model="formInline.code"-->
+<!--                                    @keyup.enter="signIn"-->
+<!--                                />-->
+<!--                                <SIdentify-->
+<!--                                    @identifyCode="checkCode"-->
+<!--                                    class="input-group-addon"-->
+<!--                                    :replace="replace"-->
+<!--                                ></SIdentify>-->
+<!--                            </div>-->
                             <div class="footer text-center">
                                 <Checkbox v-model="single"> {{ $t('ldap') }}</Checkbox>
                                 <a
@@ -115,37 +115,37 @@ a:visited {
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container">
-                    <nav>
-                        <ul>
-                            <li>
-                                <Tooltip content="yearning.io" placement="top-start">
-                                    <a class="nav-link" href="https://yearning.io">
-                                        {{ $t('about') }}
-                                    </a>
-                                </Tooltip>
-                            </li>
-                            <li>
-                                <Tooltip :content="$t('community_addr')" placement="top-start">
-                                    <span class="nav-link">
-                                        {{ $t('community') }}
-                                    </span>
-                                </Tooltip>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.gnu.org/licenses/agpl-3.0.en.html"
-                                    class="nav-link"
-                                >
-                                    {{ $t('license') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright">{{ $t('tips') }}</div>
-                </div>
-            </footer>
+<!--            <footer class="footer">-->
+<!--                <div class="container">-->
+<!--                    <nav>-->
+<!--                        <ul>-->
+<!--                            <li>-->
+<!--                                <Tooltip content="yearning.io" placement="top-start">-->
+<!--                                    <a class="nav-link" href="https://yearning.io">-->
+<!--                                        {{ $t('about') }}-->
+<!--                                    </a>-->
+<!--                                </Tooltip>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <Tooltip :content="$t('community_addr')" placement="top-start">-->
+<!--                                    <span class="nav-link">-->
+<!--                                        {{ $t('community') }}-->
+<!--                                    </span>-->
+<!--                                </Tooltip>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a-->
+<!--                                    href="https://www.gnu.org/licenses/agpl-3.0.en.html"-->
+<!--                                    class="nav-link"-->
+<!--                                >-->
+<!--                                    {{ $t('license') }}-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </nav>-->
+<!--                    <div class="copyright">{{ $t('tips') }}</div>-->
+<!--                </div>-->
+<!--            </footer>-->
         </div>
 
         <Modal
@@ -182,24 +182,24 @@ a:visited {
             </Form>
         </Modal>
 
-        <Modal v-model="sponsorship" :title="$t('sponsor_title')" width="640">
-            <h3>{{ $t('sponsor_1') }}</h3>
-            {{ $t('sponsor_2') }}
-            <br />
-            <br />
-            <h3>{{ $t('sponsor_3') }}</h3>
-            {{ $t('sponsor_4') }}
-            <br />
-            <br />
-            <h3>{{ $t('sponsor_5') }}</h3>
-            {{ $t('sponsor_6') }}
-            <br />
-            {{ $t('sponsor_7') }}
-            <br />
-            <br />
-            <img height="300" width="300" src="./assets/alipay.jpg" />
-            <img height="300" width="300" src="./assets/wechat.jpg" />
-        </Modal>
+<!--        <Modal v-model="sponsorship" :title="$t('sponsor_title')" width="640">-->
+<!--            <h3>{{ $t('sponsor_1') }}</h3>-->
+<!--            {{ $t('sponsor_2') }}-->
+<!--            <br />-->
+<!--            <br />-->
+<!--            <h3>{{ $t('sponsor_3') }}</h3>-->
+<!--            {{ $t('sponsor_4') }}-->
+<!--            <br />-->
+<!--            <br />-->
+<!--            <h3>{{ $t('sponsor_5') }}</h3>-->
+<!--            {{ $t('sponsor_6') }}-->
+<!--            <br />-->
+<!--            {{ $t('sponsor_7') }}-->
+<!--            <br />-->
+<!--            <br />-->
+<!--            <img height="300" width="300" src="./assets/alipay.jpg" />-->
+<!--            <img height="300" width="300" src="./assets/wechat.jpg" />-->
+<!--        </Modal>-->
     </div>
 </template>
 <script lang="ts">
